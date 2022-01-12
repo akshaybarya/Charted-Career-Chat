@@ -1,0 +1,26 @@
+{
+  "name": "charted-career-chat",
+  "version": "1.0.0",
+  "description": "\"Charted Career Chat Backend\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akshaybarya/Charted-Career-Chat.git"
+  },
+  "author": "AkSHaY",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/akshaybarya/Charted-Career-Chat/issues"
+  },
+  "homepage": "https://github.com/akshaybarya/Charted-Career-Chat#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.2",
+    "mongoose": "^6.1.5",
+    "nodemailer": "^6.7.2"
+  }
+}
