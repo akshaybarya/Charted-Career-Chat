@@ -11,7 +11,7 @@ app.use(express.json());
 app.use(cors());
 db();
 
-/* NODEMAILER */
+/*  NODEMAILER */
 
 const sendMail = async ({ name, email, phone }) => {
   const transporter = nodemailer.createTransport({
