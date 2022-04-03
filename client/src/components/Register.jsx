@@ -1,34 +1,37 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
+
+import axios from 'axios';
+
 import {
+  Box,
+  Button,
+  CircularProgress,
   Dialog,
-  DialogTitle,
+  DialogActions,
   DialogContent,
   DialogContentText,
-  TextField,
-  DialogActions,
-  Button,
+  DialogTitle,
   makeStyles,
-  CircularProgress,
-  Box,
-} from "@material-ui/core";
-import TextFields from "./TextFields";
-import axios from "axios";
+} from '@material-ui/core';
+
+import TextFields from './TextFields';
 
 const useStyles = makeStyles((theme) => ({
   dialogContainer: {
     marginLeft: 20,
     marginRight: 20,
+    textAlign: 'center',
 
     [theme.breakpoints.down("md")]: {
-      marginLeft: 10,
-      marginRight: 10,
+      marginLeft: 0,
+      marginRight: 0,
     },
   },
   heading: {
     textAlign: "center",
     marginTop: 50,
     [theme.breakpoints.down("md")]: {
-      marginTop: 25,
+      marginTop: 10,
     },
   },
   textFields: {
@@ -69,9 +72,18 @@ const useStyles = makeStyles((theme) => ({
   },
   ConformationContainer: {
     margin: 100,
-
-    [theme.breakpoints.down("md")]: {
-      margin: 50,
+    height: '35vh',
+    width: '40vw',
+    overflowX:' hidden',
+    
+    
+    [theme.breakpoints.down("sm")]: {
+      position: 'relative',
+      margin: 0,
+      minHeight: '40vh',
+      minWidth: '80vw',
+      width: '100%',
+      overflow: 'hidden',
     },
   },
 }));
@@ -102,7 +114,7 @@ const Register = ({ handleClose, open, result, setResult }) => {
         };
 
         const res = await axios.post(
-          `http://localhost:5000/api/user`,
+          `/api/user`,
           body,
           config
         );
@@ -126,19 +138,20 @@ const Register = ({ handleClose, open, result, setResult }) => {
   };
 
   return (
-    <div>
-      <Dialog open={open} onClose={handleClose}>
+      <Dialog open={open} onClose={handleClose} className="popupContainer" >
         {result === "We will contact you soon." ? (
           <Box className={classes.ConformationContainer}>
-            <DialogTitle className={classes.heading}>Great</DialogTitle>
-            <DialogContent className={classes.dialogContainer}>
-              <DialogContentText>
-                Our Team Will Contact You soon
-              </DialogContentText>
-            </DialogContent>
-            <DialogActions className={classes.buttonsContainer}>
-              <Button onClick={handleClose}>ok</Button>
-            </DialogActions>
+            <div className='dialogInnerContainer'>
+              <DialogTitle className={classes.heading}>Great</DialogTitle>
+              <DialogContent className={classes.dialogContainer}>
+                <DialogContentText>
+                  Our Team Will Contact You soon
+                </DialogContentText>
+              </DialogContent>
+              <DialogActions className={classes.buttonsContainer}>
+                <Button onClick={handleClose} size="large" variant='contained' color='primary' className='button' >ok</Button>
+              </DialogActions>
+            </div>
           </Box>
         ) : loading ? (
           <CircularProgress className={classes.spinnerContainer} />
@@ -186,7 +199,6 @@ const Register = ({ handleClose, open, result, setResult }) => {
           </>
         )}
       </Dialog>
-    </div>
   );
 };
 

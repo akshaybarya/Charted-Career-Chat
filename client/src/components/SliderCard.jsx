@@ -1,11 +1,12 @@
+import React from 'react';
+
 import {
   Card,
   CardActionArea,
   CardContent,
   makeStyles,
   Typography,
-} from "@material-ui/core";
-import React from "react";
+} from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   card: {
@@ -14,8 +15,8 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: 10,
     margin: 25,
     [theme.breakpoints.down("md")]: {
-      height: 210,
-      width: 265,
+      height: 230,
+      width: 280,
     },
   },
   container: {
@@ -25,8 +26,9 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "center",
   },
   content: {
-    marginTop: 20,
+    marginTop: 10,
     marginBottom: 10,
+    fontSize:13,
     [theme.breakpoints.up("md")]: {
       marginTop: 10,
       marginBottom: 35,

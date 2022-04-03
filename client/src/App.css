@@ -46,3 +46,42 @@
   opacity: 0;
   transition: opacity 1s ease;
 }
+
+.popupContainer {
+  overflow-x: hidden;
+}
+
+.MuiDialog-paperScrollPaper {
+  overflow-x: hidden;
+}
+
+
+
+.dialogInnerContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+@media (max-width: 480px) {
+  .popupContainer {
+    min-height: 70vh;
+    min-width: 80vw;
+  }
+
+  .button {
+    width: 100%;
+  }
+}
+
+@media (min-width: 480px) {
+  .button {
+    width: 50%;
+    position: relative;
+    right: 25%;
+  }
+}

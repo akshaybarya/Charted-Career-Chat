@@ -1,21 +1,30 @@
-import React from "react";
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/free-mode';
+import 'swiper/css/pagination';
+
+import React from 'react';
+
+// import Swiper core and required modules
+import SwiperCore, {
+  Autoplay,
+  FreeMode,
+  Pagination,
+} from 'swiper';
+import {
+  Swiper,
+  SwiperSlide,
+} from 'swiper/react';
+
 import {
   Container,
   Grid,
   Link,
   makeStyles,
   Typography,
-} from "@material-ui/core";
-import SliderCard from "./SliderCard";
-import { Swiper, SwiperSlide } from "swiper/react";
+} from '@material-ui/core';
 
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/free-mode";
-import "swiper/css/pagination";
-
-// import Swiper core and required modules
-import SwiperCore, { FreeMode, Pagination, Autoplay } from "swiper";
+import SliderCard from './SliderCard';
 
 // install Swiper modules
 SwiperCore.use([FreeMode, Pagination, Autoplay]);
@@ -39,7 +48,8 @@ const useStyles = makeStyles((theme) => ({
     marginRight: 50,
 
     [theme.breakpoints.down("md")]: {
-      marginLeft: 35,
+      marginLeft: 15,
+      marginRight: 15
     },
   },
   swiperSlide: {
@@ -93,56 +103,34 @@ const ReviewsSection = () => {
           >
             <SwiperSlide>
               <SliderCard
-                user="Akshay"
-                content="This workshop helped me to remove my hesitation and helped me to be confident while giving an interview. Thank you so much to the CA Monk team. It really helped us."
+                user="CA Raghu Lamba"
+                content="It was a wonderful experience where i come to know that where i lack off during the interview. They are also sharing the feedback after analysing each and every part. I would say every fresher CA should try this."
               />
             </SwiperSlide>
             <SwiperSlide>
               <SliderCard
-                user="Akshay"
-                content="This workshop helped me to remove my hesitation and helped me to be confident while giving an interview. Thank you so much to the CA Monk team. It really helped us."
+                user="CA Diksha Sahu"
+                content="A great initiative has been taken by the members of Chartered chat and career in conducting the mock interviews for CA Freshers with proper feedback and CV Screening."
               />
             </SwiperSlide>
             <SwiperSlide>
               <SliderCard
-                user="Akshay"
-                content="This workshop helped me to remove my hesitation and helped me to be confident while giving an interview. Thank you so much to the CA Monk team. It really helped us."
+                user="Poorva Patwardhan"
+                content="Hello everyone, I recently took a mock interview conducted by chartered chat and career. Thank you for conducting it. It was really very helpful. Evalu ation of CV and feedback was really great."
               />
             </SwiperSlide>
             <SwiperSlide>
               <SliderCard
-                user="Akshay"
-                content="This workshop helped me to remove my hesitation and helped me to be confident while giving an interview. Thank you so much to the CA Monk team. It really helped us."
+                user="Pragya Golechha"
+                content="Thank you Chartered Chat Career for providing constant support and guidance to freshers who are clueless after the results are announced. From giving us a platform to interact & to prepare, to providing placement opportunities, it is indeed a great initiative."
               />
             </SwiperSlide>
             <SwiperSlide>
               <SliderCard
-                user="Akshay"
-                content="This workshop helped me to remove my hesitation and helped me to be confident while giving an interview. Thank you so much to the CA Monk team. It really helped us."
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <SliderCard
-                user="Akshay"
-                content="This workshop helped me to remove my hesitation and helped me to be confident while giving an interview. Thank you so much to the CA Monk team. It really helped us."
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <SliderCard
-                user="Akshay"
-                content="This workshop helped me to remove my hesitation and helped me to be confident while giving an interview. Thank you so much to the CA Monk team. It really helped us."
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <SliderCard
-                user="Akshay"
-                content="This workshop helped me to remove my hesitation and helped me to be confident while giving an interview. Thank you so much to the CA Monk team. It really helped us."
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <SliderCard
-                user="Akshay"
-                content="This workshop helped me to remove my hesitation and helped me to be confident while giving an interview. Thank you so much to the CA Monk team. It really helped us."
+                user="CA Bhawya Bansal"
+                content="A huge thanks to CCC team for starting this great initiative of guiding and advising CA fresher about their carrier opportunities.
+                I have availed service of Screening and redrafting of CV and it's benefitting me in many ways.
+                Much appreciated"
               />
             </SwiperSlide>
           </Swiper>

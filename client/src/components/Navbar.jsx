@@ -1,13 +1,18 @@
-import React, { useState, useEffect } from "react";
+import React, {
+  useEffect,
+  useState,
+} from 'react';
+
 import {
   Button,
   Container,
+  Link,
   makeStyles,
   Toolbar,
   Typography,
-  Link,
-} from "@material-ui/core";
-import Register from "./Register";
+} from '@material-ui/core';
+
+import Register from './Register';
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -41,7 +46,7 @@ const useStyles = makeStyles((theme) => ({
   },
   fade_in: {
     transition: "opacity 1s ease",
-    fontSize: 20,
+    fontSize: 18,
     marginBottom: 8,
     marginLeft: 0,
     [theme.breakpoints.up("md")]: {
@@ -52,7 +57,7 @@ const useStyles = makeStyles((theme) => ({
   fade_out: {
     opacity: 0,
     transition: "opacity 1s ease",
-    fontSize: 20,
+    fontSize: 18,
     marginBottom: 8,
     marginLeft: 0,
     [theme.breakpoints.up("md")]: {

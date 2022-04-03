@@ -1,11 +1,23 @@
-import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import "./App.css";
-import Navbar from "./components/Navbar";
-import Home from "./pages/Home";
-import { ThemeProvider, createTheme, CssBaseline } from "@material-ui/core";
-import AdminHome from "./pages/AdminHome";
-import AdminLogin from "./pages/AdminLogin";
+import './App.css';
+
+import React from 'react';
+
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+} from 'react-router-dom';
+
+import {
+  createTheme,
+  CssBaseline,
+  ThemeProvider,
+} from '@material-ui/core';
+
+import Navbar from './components/Navbar';
+import AdminHome from './pages/admin/Home';
+import AdminLogin from './pages/admin/Login';
+import Home from './pages/Home';
 
 const theme = createTheme({
   palette: {
@@ -22,7 +34,12 @@ const App = () => {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <div className="App">
-        <Navbar />
+        <Router>
+        <Routes>
+          <Route exact path="/" element={<Navbar />} />
+        </Routes>
+        </Router>
+
         <Router>
           <Routes>
             <Route exact path="/" element={<Home />} />

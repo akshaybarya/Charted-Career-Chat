@@ -1,24 +1,29 @@
-import React, { useEffect, useState } from "react";
+import React, {
+  useEffect,
+  useState,
+} from 'react';
+
+import { Link } from 'react-router-dom';
+
 import {
+  Button,
   Card,
+  CardActionArea,
   CardContent,
   Grid,
-  makeStyles,
-  Link as Link1,
-  Typography,
-  Button,
   IconButton,
-  CardActionArea,
-} from "@material-ui/core";
+  Link as Link1,
+  makeStyles,
+  Typography,
+} from '@material-ui/core';
 import {
-  Laptop,
   AssignmentInd,
   HowToReg,
+  Laptop,
   PlaylistAddCheckRounded,
-} from "@material-ui/icons/";
+} from '@material-ui/icons/';
 
-import { Link } from "react-router-dom";
-import Register from "./Register";
+import Register from './Register';
 
 const useStyles = makeStyles((theme) => ({
   mainContainer: {
@@ -50,13 +55,17 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     flexDirection: "column",
     justifyContent: "space-around",
+    width: '100%',
+    [theme.breakpoints.down('md')]: {
+      padding: 20
+    }
   },
   cardComponent: {
-    width: 130,
-    height: 115,
+    width: '40vw',
     marginTop: 15,
     borderRadius: 30,
     marginLeft: 10,
+    aspectRatio: '1',
 
     [theme.breakpoints.up("md")]: {
       width: 275,
@@ -86,6 +95,28 @@ const useStyles = makeStyles((theme) => ({
       fontSize: 22,
     },
   },
+  mainHeading: {
+    [theme.breakpoints.down("md")]: {
+      fontSize: 20,
+    },
+  },
+  secondaryHeading: {
+    marginTop: 20, 
+    fontSize: 22,
+    [theme.breakpoints.down("md")]: {
+      fontSize: 18,
+    },
+  },
+  mainButton: {
+    marginTop: 20,
+    width: 250,
+    height: 50,
+    [theme.breakpoints.down('md')]: {
+      width: 200,
+      height: 40,
+      fontSize: 15
+    }
+  }
 }));
 
 const Main = () => {
@@ -160,7 +191,7 @@ const Main = () => {
         <Typography
           variant="body1"
           component="div"
-          style={{ marginTop: 20, fontSize: 22 }}
+          className={classes.secondaryHeading}
         >
           Join the World’s Most Passionate CA Community.
         </Typography>
@@ -169,7 +200,7 @@ const Main = () => {
           variant="contained"
           color="primary"
           size="large"
-          style={{ marginTop: 20, width: 250, height: 50 }}
+          className={classes.mainButton}
           onClick={handleClickOpen}
         >
           Get Started

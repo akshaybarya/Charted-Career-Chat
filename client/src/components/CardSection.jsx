@@ -1,16 +1,18 @@
-import React from "react";
+import React from 'react';
+
+import { Link } from 'react-router-dom';
+
 import {
   Card,
   CardActionArea,
   CardContent,
-  Link as Link1,
   CardMedia,
   Container,
   Grid,
+  Link as Link1,
   makeStyles,
   Typography,
-} from "@material-ui/core";
-import { Link } from "react-router-dom";
+} from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   cardContainer: {
@@ -43,8 +45,9 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: 30,
     marginTop: 100,
     [theme.breakpoints.down("md")]: {
-      width: 210,
-      height: 200,
+      width: '75vw',
+      aspectRatio: '1',
+      marginTop: 50,
     },
   },
   cardImage: {
@@ -54,7 +57,7 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("md")]: {
       height: 40,
       width: 40,
-      marginTop: 15,
+      marginTop: '10%',
     },
   },
   resourceHeading: {
@@ -64,7 +67,7 @@ const useStyles = makeStyles((theme) => ({
   },
   lastContainer: {
     [theme.breakpoints.down("md")]: {
-      marginBottom: 50,
+      marginBottom: '20%',
     },
   },
 }));

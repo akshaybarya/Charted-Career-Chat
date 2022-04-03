@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const nodemailer = require("nodemailer");
+const jwt = require('jsonwebtoken');
 require("dotenv/config");
 const db = require("./config/db");
 const User = require("./models/User");
@@ -41,6 +42,21 @@ const sendMail = async ({ name, email, phone }) => {
   });
 };
 
+/**
+ * MIDDLEWARES
+ */
+
+const authenticateToken = (req,res,next) => {
+  const token = req.headers['authToken'];
+
+  jwt.verify(token, process.env.ACESS_TOKEN_SECRET, (err,user)=>{
+    if(err)
+      res.status(403).send({error:'Invalid User!'});
+    
+    next();
+  });
+}
+
 /* ROUTES */
 
 app.get("/", (req, res) => {
@@ -77,9 +93,36 @@ app.post(`/api/user`, async (req, res) => {
   }
 });
 
+/**
+ * ADMIN ROUTES
+ */
+app.post(`/admin/auth/login`, (req,res)=> {
+  const {userName, password} = req.body;
+
+  const isValid = adminValidator(userName,password);
+
+  if(isValid){
+    const token = jwt.sign(userName, process.env.ACESS_TOKEN_SECRET)
+    res.status(200).json({acessToken :token});
+  }else{
+    res.status(403).send({error:'Invalid User!'});
+  }
+});
+
 /* SERVER */
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5001;
 
 app.listen(PORT, () => {
   console.log(`Server started at http://localhost:${PORT}`);
 });
+
+
+/**
+ * Helpers
+ */
+
+ const adminValidator = (userName, password) => {
+  if(userName === process.env.ADMIN && password === process.env.ADMINPASSWORD)
+      return true;
+  return false;
+};

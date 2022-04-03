@@ -1,12 +1,16 @@
-import React from "react";
+import React from 'react';
+
 import {
   Container,
   Grid,
-  Typography,
-  makeStyles,
   IconButton,
-} from "@material-ui/core";
-import { LocalPhoneOutlined, EmailOutlined } from "@material-ui/icons";
+  makeStyles,
+  Typography,
+} from '@material-ui/core';
+import {
+  EmailOutlined,
+  LocalPhoneOutlined,
+} from '@material-ui/icons';
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -33,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
   text: {
     marginTop: 25,
     [theme.breakpoints.down("md")]: {
-      fontSize: 14,
+      fontSize: 12,
     },
   },
   buttonIcon: {
