@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/Charted-Career-Chat/static/css/main.4e4816ff.css",
+    "main.js": "/Charted-Career-Chat/static/js/main.817f1b9a.js",
+    "static/media/presentation.png": "/Charted-Career-Chat/static/media/presentation.8be8928f490c795b1921.png",
+    "static/media/resources.png": "/Charted-Career-Chat/static/media/resources.58f66af7525e38dcfcae.png",
+    "static/media/interview.png": "/Charted-Career-Chat/static/media/interview.d342dfac0ccdbfa56aad.png",
+    "static/media/experience2.png": "/Charted-Career-Chat/static/media/experience2.f46b5e21b21251cd1457.png",
+    "static/media/lnt.png": "/Charted-Career-Chat/static/media/lnt.3f3708096ba6fa254d5a.png",
+    "static/media/wipro.png": "/Charted-Career-Chat/static/media/wipro.51f875a789eb96db1d18.png",
+    "index.html": "/Charted-Career-Chat/index.html",
+    "main.4e4816ff.css.map": "/Charted-Career-Chat/static/css/main.4e4816ff.css.map",
+    "main.817f1b9a.js.map": "/Charted-Career-Chat/static/js/main.817f1b9a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4e4816ff.css",
+    "static/js/main.817f1b9a.js"
+  ]
+}
